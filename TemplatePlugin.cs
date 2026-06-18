@@ -4,7 +4,7 @@ using Ivy.Plugins;
 
 namespace Ivy.Tendril.Plugin.Template;
 
-public class TemplatePlugin : IIvyPlugin
+public class TemplatePlugin : IIvyPlugin<ITendrilPluginContext>
 {
     public PluginManifest Manifest { get; } = new()
     {
@@ -29,14 +29,11 @@ public class TemplatePlugin : IIvyPlugin
         ]
     };
 
-    public void Configure(IIvyPluginContext context)
+    public void Configure(ITendrilPluginContext context)
     {
         var apiKey = context.Config.GetValue("ApiKey")!;
 
-        if (context is not ITendrilPluginContext tendrilContext)
-            return;
-
         // Register services, messaging channels, etc.
-        // Example: tendrilContext.RegisterMessagingChannel(new MyChannel(apiKey));
+        // Example: context.RegisterMessagingChannel(new MyChannel(apiKey));
     }
 }
