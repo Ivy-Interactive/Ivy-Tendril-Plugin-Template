@@ -14,19 +14,9 @@ public class TemplatePlugin : IIvyPlugin<ITendrilPluginContext>
         Icon = PluginIcon.Named("Puzzle"),
     };
 
-    public PluginConfigurationSchema ConfigurationSchema { get; } = new()
-    {
-        Fields =
-        [
-            new()
-            {
-                Key = "ApiKey",
-                Type = ConfigFieldType.Secret,
-                IsRequired = true,
-                Description = "Your API key"
-            }
-        ]
-    };
+    public PluginConfigurationSchema ConfigurationSchema { get; } = new SchemaBuilder()
+        .AddSecret("ApiKey", description: "Your API key", isRequired: true)
+        .Build();
 
     public void Configure(ITendrilPluginContext context)
     {
