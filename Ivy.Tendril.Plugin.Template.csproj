@@ -12,6 +12,8 @@
     <PackageProjectUrl>https://github.com/your-org/your-plugin</PackageProjectUrl>
     <RepositoryUrl>https://github.com/your-org/your-plugin</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <TendrilIconKind>named</TendrilIconKind>
+    <TendrilIconValue>Settings</TendrilIconValue>
   </PropertyGroup>
 
   <PropertyGroup>
