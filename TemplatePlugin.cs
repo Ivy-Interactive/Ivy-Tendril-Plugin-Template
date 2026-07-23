@@ -10,7 +10,6 @@ public class TemplatePlugin : IIvyPlugin<ITendrilPluginContext>
     {
         Id = "Ivy.Tendril.Plugin.Template",
         Title = "Template",
-        Version = new Version(1, 0, 0),
         Icon = PluginIcon.Named("Puzzle"),
     };
 
